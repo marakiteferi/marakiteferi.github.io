@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Maraki Teferi Kassa · CV</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 11mm 14mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Inter, Arial, sans-serif; font-size: 8.9pt; line-height: 1.4; color: #1a1f2b; }
+  a { color: inherit; text-decoration: none; }
+  header { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; padding-bottom: 10px; border-bottom: 1.5px solid #1a1f2b; }
+  h1 { font-family: "Instrument Serif", Georgia, serif; font-weight: 400; font-size: 28pt; line-height: 1; letter-spacing: -.01em; }
+  .headline { margin-top: 6px; font-weight: 500; color: #0b5a8a; font-size: 9.6pt; }
+  .contact { white-space: nowrap; text-align: right; font-size: 8.6pt; color: #3d4556; line-height: 1.6; }
+  section { margin-top: 10px; }
+  h2 { font-size: 8pt; font-weight: 600; text-transform: uppercase; letter-spacing: .14em; color: #0b5a8a; margin-bottom: 6px; padding-bottom: 3px; border-bottom: .6px solid #cfd5df; }
+  p { color: #2b3242; }
+  .row { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+  .title { font-weight: 600; font-size: 9.8pt; }
+  .meta { font-size: 8.4pt; color: #5a6274; white-space: nowrap; }
+  .sub { font-style: italic; color: #3d4556; }
+  ul { padding-left: 14px; margin-top: 3px; }
+  li { margin-bottom: 1.5px; color: #2b3242; }
+  .item { margin-bottom: 7px; break-inside: avoid; }
+  .tech { font-size: 8.4pt; color: #5a6274; margin-top: 2px; }
+  .tech b { font-weight: 500; color: #3d4556; }
+  .skills { display: grid; grid-template-columns: 140px 1fr; row-gap: 3px; }
+  .skills dt { font-weight: 600; }
+  .interests { display: flex; flex-wrap: wrap; gap: 4px 6px; margin-top: 5px; }
+  .interests span { border: .6px solid #cfd5df; border-radius: 10px; padding: 1px 8px; font-size: 8.4pt; }
+</style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Maraki Teferi Kassa</h1>
+      <p class="headline">Computer Science &amp; Engineering Graduate · Full-Stack Developer · Emerging AI &amp; Cybersecurity Researcher</p>
+    </div>
+    <div class="contact">
+      Adama, Ethiopia · Open to remote<br>
+      <a href="mailto:marakiteferi2@gmail.com">marakiteferi2@gmail.com</a><br>
+      <a href="https://marakiteferi.github.io">marakiteferi.github.io</a><br>
+      <a href="https://github.com/marakiteferi">github.com/marakiteferi</a><br>
+      <a href="https://www.linkedin.com/in/maraki-teferi-4bb73a374/">LinkedIn: maraki-teferi</a>
+    </div>
+  </header>
+
+  <section>
+    <h2>Profile</h2>
+    <p>Computer Science and Engineering graduate with hands-on experience building full-stack applications, backend systems, and workflow automation, and integrating intelligent capabilities such as semantic search and OCR into software. Practical background in system architecture, database design, and application security. Research interests at the intersection of AI and cybersecurity, particularly security-focused machine learning, vulnerability detection, adversarial machine learning, and trustworthy AI. Seeking graduate research opportunities, research collaborations, and freelance software projects.</p>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="item">
+      <div class="row"><span class="title">B.Sc. in Computer Science and Engineering</span></div>
+      <p class="sub">Adama Science and Technology University (ASTU)</p>
+      <ul><li>Final-year project: <b>E-Flow</b>, an intelligent document tracking and workflow management system with role-based access control and hash-chained document integrity verification.</li></ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Selected Projects</h2>
+    <div class="item">
+      <div class="row"><span class="title">E-Flow: Intelligent Document Tracking &amp; Workflow Management</span><span class="meta">Capstone · Team project</span></div>
+      <ul>
+        <li>University-oriented platform for creating, tracking, processing, and managing official documents; major implementation contributions.</li>
+        <li>Implemented backend functionality, workflow logic, and system integrations.</li>
+        <li>Integrated role-based access control and document security mechanisms.</li>
+        <li>Implemented document integrity verification using HMAC/SHA-256 hash chaining; explored OCR and electronic document processing.</li>
+      </ul>
+      <p class="tech"><b>Tech:</b> React, TypeScript, Node.js, Express, Prisma, PostgreSQL, Tailwind CSS, React Flow · github.com/marakiteferi/eflow-system-v2</p>
+    </div>
+    <div class="item">
+      <div class="row"><span class="title">ThreatTrail: Security Operations Center (SOC) Training Environment</span><span class="meta">Security</span></div>
+      <ul>
+        <li>Hands-on training environment for investigating attack scenarios through simulated security events and log analysis.</li>
+        <li>Implemented project infrastructure and training workflows.</li>
+        <li>Worked with attack investigation scenarios, security logs, and Mordor datasets using MITRE ATT&amp;CK concepts.</li>
+      </ul>
+      <p class="tech"><b>Tech:</b> Python, security logs, Mordor datasets, MITRE ATT&amp;CK · github.com/marakiteferi/threat-trail</p>
+    </div>
+    <div class="item">
+      <div class="row"><span class="title">Smart Document Search: Semantic Search &amp; Information Retrieval</span><span class="meta">AI / IR</span></div>
+      <ul>
+        <li>Search application that retrieves documents, including legal information, by meaning rather than exact keyword matches.</li>
+        <li>Built the application interface and supporting backend; explored embedding-based search and vector database integration.</li>
+      </ul>
+      <p class="tech"><b>Tech:</b> Next.js, TypeScript, Tailwind CSS, Pinecone · github.com/marakiteferi/smart-document-search-application</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Technical Skills</h2>
+    <dl class="skills">
+      <dt>Languages</dt><dd>Python, TypeScript, JavaScript, SQL</dd>
+      <dt>Frontend</dt><dd>React, Next.js, HTML5, CSS3, Tailwind CSS</dd>
+      <dt>Backend</dt><dd>Node.js, Express.js, REST API development, Prisma ORM</dd>
+      <dt>Data &amp; Infrastructure</dt><dd>PostgreSQL, Supabase, Pinecone, Git &amp; GitHub, Vercel</dd>
+      <dt>AI &amp; Data</dt><dd>Machine learning fundamentals, NLP fundamentals, semantic search, information retrieval, OCR integration</dd>
+      <dt>Security</dt><dd>Role-based access control, application security, cryptographic hashing, security event analysis, SOC investigation fundamentals</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Research Interests</h2>
+    <p>Investigating how machine learning and AI techniques can improve software security, vulnerability identification, and the reliability of intelligent systems.</p>
+    <div class="interests">
+      <span>AI for Cybersecurity</span><span>Security-Focused Machine Learning</span><span>Software Vulnerability Detection</span>
+      <span>Adversarial Machine Learning</span><span>Trustworthy &amp; Secure AI</span><span>Intelligent Security Analysis</span>
+    </div>
+  </section>
+</body>
+</html>
