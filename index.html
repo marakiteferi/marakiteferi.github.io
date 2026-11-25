@@ -202,6 +202,33 @@
         </div>
       </article>
 
+
+      <!-- Job Assistant -->
+      <article class="project p-job flip reveal">
+        <div class="project-visual" aria-hidden="true">
+          <div class="chat">
+            <div class="msg in"><span class="ch">@ethio_jobs</span>Backend Developer (Node.js) · Addis Ababa · 2+ yrs …</div>
+            <div class="msg in am"><span class="ch">@jobs_et</span>የሶፍትዌር ኢንጂነር ክፍት የስራ ቦታ …</div>
+            <div class="ai"><span>Gemini</span> match against profiles</div>
+            <div class="msg out"><b>2 new matches for you</b>Backend Developer · 86 · APPLY<br>Software Engineer · 72 · CONSIDER</div>
+          </div>
+        </div>
+        <div class="project-body">
+          <p class="meta"><span class="num">04</span> Automation · LLM · Engineering</p>
+          <h3>Job Assistant</h3>
+          <p class="sub">LLM-powered job matching from Telegram channels</p>
+          <p>Reads Ethiopian job channels on Telegram in English and Amharic, uses Gemini with structured output to score how well each post fits each person (0–100, with a short reason), and delivers personal matches on Telegram.</p>
+          <ul class="points">
+            <li>Prefilters non-job posts and reposts, then analyses each batch in a single LLM call for all active people to keep costs low.</li>
+            <li>Runs unattended every day on GitHub Actions, with rate-limit handling and de-duplication of sent alerts.</li>
+            <li>Desktop app for fetching, reviewing and sending by hand, with sync between local and scheduled runs.</li>
+          </ul>
+          <ul class="tags"><li>Python</li><li>Gemini API</li><li>Telethon</li><li>SQLite</li><li>GitHub Actions</li><li>Tkinter</li></ul>
+          <div class="links">
+            <span class="pending">Private repository · available on request</span>
+          </div>
+        </div>
+      </article>
     </section>
 
     <!-- ============ RESEARCH ============ -->
@@ -209,7 +236,7 @@
       <div class="label reveal"><span>03</span>Research</div>
       <div class="research-head">
         <h2 class="section-title reveal">How can machine learning make software <em>more secure</em>, and AI itself more <em>trustworthy</em>?</h2>
-        <p class="reveal muted">I'm particularly interested in how machine learning and AI techniques can improve software security, vulnerability identification, and the reliability of intelligent systems. This is an evolving direction that I aim to develop through graduate research and collaboration.</p>
+        <p class="reveal muted">I'm particularly interested in how machine learning and AI techniques can improve software security, vulnerability identification, and the reliability of intelligent systems. My first independent study looks at privacy leakage through model explanations; I aim to develop this direction further through graduate research and collaboration.</p>
       </div>
       <ol class="interests reveal">
         <li><span>AI for Cybersecurity</span></li>
@@ -220,10 +247,47 @@
         <li><span>Intelligent Security Analysis</span></li>
       </ol>
 
+      <article class="rfeature reveal" id="deepleak">
+        <div class="rf-head">
+          <p class="meta"><span class="num">Independent research</span> Reproduction &amp; extension · Privacy in ML</p>
+          <h3>Membership Leakage via Model Explanations</h3>
+          <p class="sub">Can a model's explanations reveal whether a record was in its training data?</p>
+        </div>
+        <div class="rf-grid">
+          <div class="rf-text">
+            <p>An empirical reproduction of Shokri, Strobel &amp; Zick (2021), <em>On the Privacy Risks of Model Explanations</em>, extended with an attribution-clipping defence inspired by <em>DeepLeak</em> (Ben Hmida et al., IEEE SaTML 2026).</p>
+            <ul class="points">
+              <li>Trained target and shadow CNNs on disjoint CIFAR-10 splits; computed Saliency and Integrated Gradients attributions with Captum.</li>
+              <li>Built membership-inference attacks on explanation summary statistics and compared them with loss, logit-scaled (LiRA-style) and confidence-only baselines across three seeds.</li>
+              <li>Reported accuracy and TPR at 0.1%, 1% and 5% FPR, following current MIA evaluation practice.</li>
+              <li>Identified a softmax-saturation tie artifact that zeroes the loss attack's low-FPR TPR, and fixed it with a logit-scaled score.</li>
+              <li>Evaluated attribution clipping (90th–99th percentile) as a mitigation: it reduced attack accuracy by under one point, suggesting simple clipping is not enough.</li>
+            </ul>
+            <ul class="tags"><li>PyTorch</li><li>Captum</li><li>scikit-learn</li><li>Membership inference</li><li>Explainable AI</li></ul>
+            <div class="links">
+              <a href="https://github.com/marakiteferi/Deep_leak" target="_blank" rel="noopener">Code &amp; results ↗</a>
+              <a href="https://arxiv.org/abs/1907.00164" target="_blank" rel="noopener">Original paper ↗</a>
+              <a href="https://arxiv.org/abs/2601.03429" target="_blank" rel="noopener">DeepLeak ↗</a>
+            </div>
+          </div>
+          <figure class="rf-chart" aria-label="Attack accuracy, mean of three seeds">
+            <figcaption>Attack accuracy · CIFAR-10 · mean of 3 seeds</figcaption>
+            <div class="bars">
+              <div class="bar"><span class="b-label">Loss / logit-scaled</span><span class="b-track"><span class="b-fill" style="--v:64.76"></span></span><span class="b-val">64.8%</span></div>
+              <div class="bar hot"><span class="b-label">Integrated Gradients</span><span class="b-track"><span class="b-fill" style="--v:54.07"></span></span><span class="b-val">54.1%</span></div>
+              <div class="bar hot"><span class="b-label">Saliency</span><span class="b-track"><span class="b-fill" style="--v:51.61"></span></span><span class="b-val">51.6%</span></div>
+              <div class="bar"><span class="b-label">Confidence only</span><span class="b-track"><span class="b-fill" style="--v:49.43"></span></span><span class="b-val">49.4%</span></div>
+              <div class="chance" aria-hidden="true"><span>chance 50%</span></div>
+            </div>
+            <p class="rf-note">Label-agnostic explanation attacks leak more than confidence vectors alone; loss-based attacks dominate due to the train/test generalization gap.</p>
+          </figure>
+        </div>
+      </article>
+
       <div class="pubs reveal" id="publications">
         <div class="pubs-col">
           <h3>Research in progress</h3>
-          <p class="muted">Experimental work, methodology, and findings will appear here as they develop.</p>
+          <p class="muted">Further experiments on explanation privacy and AI for security will appear here as they develop.</p>
           <!-- Add entries like:
           <article class="pub"><p class="pub-meta">2027 · Preprint</p><h4>Title</h4><p>One-line summary.</p><a href="#">PDF ↗</a></article> -->
         </div>
@@ -240,10 +304,10 @@
       <div class="skills">
         <div class="skill-group reveal"><h3>Languages</h3><p>Python · TypeScript · JavaScript · SQL</p></div>
         <div class="skill-group reveal"><h3>Frontend</h3><p>React · Next.js · HTML5 · CSS3 · Tailwind CSS</p></div>
-        <div class="skill-group reveal"><h3>Backend</h3><p>Node.js · Express.js · REST APIs · Prisma ORM</p></div>
-        <div class="skill-group reveal"><h3>Data &amp; Infrastructure</h3><p>PostgreSQL · Supabase · Pinecone · Git &amp; GitHub · Vercel</p></div>
-        <div class="skill-group reveal"><h3>AI &amp; Data</h3><p>ML fundamentals · NLP fundamentals · Semantic search · Information retrieval · OCR integration</p></div>
-        <div class="skill-group reveal"><h3>Security</h3><p>Role-based access control · Application security · Cryptographic hashing · Security event analysis · SOC investigation</p></div>
+        <div class="skill-group reveal"><h3>Backend</h3><p>Node.js · Express.js · REST APIs · Prisma ORM · Drizzle ORM</p></div>
+        <div class="skill-group reveal"><h3>Data &amp; Infrastructure</h3><p>PostgreSQL · Supabase · SQLite · Pinecone · Cloudinary · Git &amp; GitHub · GitHub Actions · Vercel</p></div>
+        <div class="skill-group reveal"><h3>AI &amp; Data</h3><p>PyTorch · Captum · scikit-learn · LLM integration (Gemini) · Semantic search · Information retrieval · OCR integration</p></div>
+        <div class="skill-group reveal"><h3>Security</h3><p>Membership inference attacks · Role-based access control · Application security · Cryptographic hashing · Security event analysis · SOC investigation</p></div>
       </div>
     </section>
 
@@ -278,6 +342,22 @@
         <li class="reveal"><span class="s-num">v.</span><h3>Business websites &amp; dashboards</h3><p>Fast, accessible sites and internal tools your team will actually use.</p></li>
         <li class="reveal"><span class="s-num">vi.</span><h3>Intelligent search &amp; documents</h3><p>Semantic search, document management, and OCR-powered pipelines.</p></li>
       </ul>
+
+      <article class="client reveal">
+        <div class="client-visual" aria-hidden="true">
+          <span>EN</span><span>አማ</span><span>OM</span>
+        </div>
+        <div class="client-body">
+          <p class="meta"><span class="num">Client work</span> Hospitality · Full-stack</p>
+          <h3>Mame Adama Hotel</h3>
+          <p>Public website and admin dashboard for a hotel in Adama, in English, Amharic and Afaan Oromoo. Staff manage rooms, dining, conference spaces, offers, blog, gallery and page copy without touching code.</p>
+          <ul class="points">
+            <li>Server-only data access through Drizzle ORM on Supabase Postgres, with the public Data API locked down.</li>
+            <li>Admin-only auth, server-signed Cloudinary uploads, and a server-side admin check on every action.</li>
+          </ul>
+          <ul class="tags"><li>Next.js</li><li>TypeScript</li><li>next-intl</li><li>Supabase</li><li>Drizzle ORM</li><li>Cloudinary</li><li>Tailwind CSS</li></ul>
+        </div>
+      </article>
     </section>
 
     <!-- ============ CONTACT ============ -->

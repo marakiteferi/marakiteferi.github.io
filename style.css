@@ -233,7 +233,7 @@ strong { font-weight: 600; }
   display: grid; place-items: center;
 }
 .project-visual svg { width: 100%; height: 100%; }
-.meta { font-family: var(--mono); font-size: .75rem; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); display: flex; gap: 12px; align-items: center; }
+.meta { flex-wrap: wrap; row-gap: 4px; font-family: var(--mono); font-size: .75rem; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); display: flex; gap: 12px; align-items: center; }
 .meta .num { color: var(--pc); }
 .project h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 4.5vw, 3.2rem); line-height: 1; margin-top: 14px; }
 .sub { color: var(--pc); font-weight: 500; margin: 8px 0 14px; }
@@ -378,3 +378,56 @@ strong { font-weight: 600; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .js .reveal { opacity: 1; transform: none; }
 }
+
+/* ========== Research feature ========== */
+.rfeature {
+  --pc: var(--a2);
+  margin-top: 56px; padding: 32px; border-radius: 24px; position: relative; overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--a2) 35%, var(--border));
+  background:
+    radial-gradient(700px circle at 100% 0%, color-mix(in srgb, var(--a2) 14%, transparent), transparent 60%),
+    radial-gradient(500px circle at 0% 100%, color-mix(in srgb, var(--a1) 10%, transparent), transparent 60%),
+    var(--surface);
+}
+.rfeature h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.9rem, 4vw, 2.8rem); line-height: 1.05; margin-top: 14px; }
+.rfeature .sub { color: var(--a2); }
+.rf-grid { display: grid; gap: 32px; margin-top: 8px; }
+.rf-text > p { color: var(--muted); }
+.rf-text em { color: var(--text); font-size: 1.08em; }
+@media (min-width: 960px) { .rfeature { padding: 48px; } .rf-grid { grid-template-columns: 1.15fr 1fr; gap: 48px; } }
+.rf-chart { align-self: start; padding: 24px; border-radius: 16px; border: 1px solid var(--border); background: var(--bg-2); }
+.rf-chart figcaption { font-family: var(--mono); font-size: .7rem; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin-bottom: 18px; }
+.bars { position: relative; display: grid; gap: 14px; }
+.bar { display: grid; grid-template-columns: 1fr; gap: 6px; font-size: .85rem; }
+.b-label { color: var(--muted); }
+.bar.hot .b-label { color: var(--text); }
+.b-track { position: relative; height: 10px; border-radius: 6px; background: var(--surface-2); overflow: hidden; }
+.b-fill { position: absolute; inset: 0 auto 0 0; width: calc((var(--v) - 40) / 30 * 100%); border-radius: 6px; background: var(--dim); }
+.bar.hot .b-fill { background: linear-gradient(90deg, var(--a1), var(--a2)); }
+.b-val { font-family: var(--mono); font-size: .78rem; color: var(--text); }
+.bar { grid-template-columns: 1fr auto; }
+.bar .b-track { grid-column: 1 / -1; grid-row: 2; }
+.chance { position: absolute; top: 0; bottom: 0; left: calc(10 / 30 * 100%); border-left: 1px dashed var(--a3); pointer-events: none; }
+.chance span { position: absolute; bottom: -22px; left: -28px; font-family: var(--mono); font-size: .65rem; color: var(--a3); white-space: nowrap; }
+.rf-note { margin-top: 34px; font-size: .82rem; color: var(--muted); }
+
+/* ========== Job Assistant visual ========== */
+.p-job { --pc: var(--a3); }
+.chat { width: 82%; display: flex; flex-direction: column; gap: 10px; font-size: clamp(.62rem, 1.3vw, .78rem); }
+.msg { padding: 10px 12px; border-radius: 12px; border: 1px solid var(--border); background: var(--bg); max-width: 88%; line-height: 1.5; }
+.msg .ch { display: block; font-family: var(--mono); font-size: .9em; color: var(--a1); margin-bottom: 2px; }
+.msg.in { border-bottom-left-radius: 4px; }
+.msg.out { align-self: flex-end; border-bottom-right-radius: 4px; border-color: color-mix(in srgb, var(--a3) 50%, var(--border)); background: color-mix(in srgb, var(--a3) 10%, var(--bg)); }
+.msg.out b { display: block; color: var(--a3); font-weight: 600; margin-bottom: 2px; }
+.ai { align-self: center; font-family: var(--mono); font-size: .9em; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+.ai span { padding: 2px 8px; border-radius: 999px; background: linear-gradient(110deg, var(--a1), var(--a2)); color: #fff; }
+
+/* ========== Client work ========== */
+.client { --pc: var(--a1); margin-top: 40px; display: grid; gap: 28px; padding: 32px; border-radius: 24px; border: 1px solid var(--border); background: var(--surface); }
+@media (min-width: 860px) { .client { grid-template-columns: 220px 1fr; gap: 44px; padding: 40px; } }
+.client-visual { display: flex; flex-wrap: wrap; align-content: center; justify-content: center; gap: 10px; min-height: 140px; border-radius: 16px; border: 1px solid var(--border); background: radial-gradient(circle at 30% 20%, color-mix(in srgb, var(--a1) 16%, transparent), transparent 65%), var(--bg-2); }
+.client-visual span { font-family: var(--serif); font-size: 1.6rem; padding: 4px 14px; border-radius: 12px; border: 1px solid var(--border); background: var(--bg); }
+.client-visual span:nth-child(2) { color: var(--a2); }
+.client-visual span:nth-child(3) { color: var(--a3); }
+.client h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.8rem, 3.6vw, 2.4rem); margin: 10px 0 10px; line-height: 1.05; }
+.client-body > p:not(.meta) { color: var(--muted); }
